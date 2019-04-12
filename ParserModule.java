@@ -118,13 +118,12 @@ public class ParserModule {
      }
 
 
-    // returns type for current VM command, C_ARITHMETIC returned for all arithmetic commands
+    // returns type for current VM command, C_ARITHMETIC 
     public String commandType() {
         return cmdType;
     }
 
-    // returns first argument of current command, in case of C_ARITHMETIC the command itself
-    // (add, sub, etc) is returned. should not be called if current command is C_RETURN
+    // returns first argument of current commandC_ARITHMETIC the command itself
     public String arg1() {
         String strArg1 = null;
         if (cmdType.equals("C_ARITHMETIC")) {
@@ -135,7 +134,7 @@ public class ParserModule {
         return strArg1;
     }
 
-    // returns 2nd arg of curr command - should be called only if curr command is C_PUSH, C_POP, C_FUNCTION, or C_CALL
+    // returns 2nd arg of curr command - C_PUSH, C_POP, C_FUNCTION, or C_CALL
     public int arg2() {
         int intArg2 = 0;
         if (cmdType.equals("C_PUSH") || cmdType.equals("C_POP") || cmdType.equals("C_FUNCTION") || cmdType.equals("C_CALL")) {
